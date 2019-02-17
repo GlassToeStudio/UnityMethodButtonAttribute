@@ -24,7 +24,7 @@ public class ExampleClass : MonoBehaviour
     {
         Debug.Log("That other thing be did.");
     }
-    public void DoAThirdThing()
+    private void DoAThirdThing()
     {
         Debug.Log("That third thing be did.");
     }

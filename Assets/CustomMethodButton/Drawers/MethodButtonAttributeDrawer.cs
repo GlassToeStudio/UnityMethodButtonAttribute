@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using System.Reflection;
 
 [CustomPropertyDrawer(typeof(MethodButtonAttribute))]
 public class MethodButtonAttributeDrawer : PropertyDrawer
@@ -43,7 +44,7 @@ public class MethodButtonAttributeDrawer : PropertyDrawer
     private void InvokeMethod(SerializedProperty property, string name)
     {
         Object target = property.serializedObject.targetObject;
-        target.GetType().GetMethod(name).Invoke(target, null);  
+        target.GetType().GetMethod(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly).Invoke(target, null);  
     }
 
     private void LogErrorMessage(SerializedProperty editorFoldout)
