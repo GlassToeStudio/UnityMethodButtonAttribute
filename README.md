@@ -16,17 +16,21 @@ public class ExampleClass : MonoBehaviour
     public int ExampleInt;
     public bool ExampleBool;
 
-    public void DoAThing()
+    internal void ExampleInternalMethod()
     {
-        Debug.Log("That thing be did.");
+        Debug.Log("Invoking: ExampleClass.ExampleInternalMethod");
     }
-    public void DoAnotherThing()
+    public void ExamplePublicMethod()
     {
-        Debug.Log("That other thing be did.");
+        Debug.Log("Invoking: ExampleClass.ExamplePublicMethod");
     }
-    private void DoAThirdThing()
+    private void ExamplePrivateMethod()
     {
-        Debug.Log("That third thing be did.");
+        Debug.Log("Invoking: ExampleClass.ExamplePrivateMethod");
+    }
+    protected void ExampleProtectedMethod()
+    {
+        Debug.Log("Invoking: ExampleClass.ExampleProtectedMethod");
     }
 
 
@@ -42,11 +46,10 @@ public class ExampleClass : MonoBehaviour
      */
 
 #if UNITY_EDITOR
-    [MethodButton("DoAThing", "DoAnotherThing", "DoAThirdThing")]
-    [SerializeField] private bool editorFoldout; 
+    [MethodButton("ExampleInternalMethod", "ExamplePublicMethod", "ExamplePrivateMethod", "ExampleProtectedMethod")]
+    [SerializeField] private bool editorFoldout;
 #endif
 }
-
 ```
 
 
