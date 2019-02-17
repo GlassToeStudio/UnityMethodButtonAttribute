@@ -52,4 +52,8 @@ public class ExampleClass : MonoBehaviour
 }
 ```
 
+<p align="center">
+  <br>
+  <img src="https://github.com/GlassToeStudio/UnityMethodButtonAttribute/blob/master/Images/MethodButtonAttribute2.gif">
+</p>
 
