@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExampleInt: 0
   ExampleBool: 0
-  editorFoldout: 0
+  editorFoldout: 1
 --- !u!4 &398710250
 Transform:
   m_ObjectHideFlags: 0

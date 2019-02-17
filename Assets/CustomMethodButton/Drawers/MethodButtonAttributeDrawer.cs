@@ -5,7 +5,7 @@ using System.Reflection;
 [CustomPropertyDrawer(typeof(MethodButtonAttribute))]
 public class MethodButtonAttributeDrawer : PropertyDrawer
 {
-    private int i;
+    private int buttonCount;
     private float buttonHeight = EditorGUIUtility.singleLineHeight;
     private MethodButtonAttribute attr;
     
@@ -17,17 +17,24 @@ public class MethodButtonAttributeDrawer : PropertyDrawer
             return;
         }
 
-        i = 0;
+        buttonCount = 0;
+
         Rect foldoutRect = new Rect(position.x, position.y, position.width, buttonHeight);
+
         editorFoldout.boolValue = EditorGUI.Foldout(foldoutRect, editorFoldout.boolValue, "Buttons", true);
+
         if (editorFoldout.boolValue)
         {
-            i++;
+            buttonCount++;
+
             attr = (MethodButtonAttribute)base.attribute;
+
             foreach (var name in attr.MethodNames)
             {
-                i++;
-                Rect buttonRect = new Rect(position.x, position.y + (buttonHeight * i), position.width, buttonHeight);
+                buttonCount++;
+
+                Rect buttonRect = new Rect(position.x, position.y + (buttonHeight * buttonCount), position.width, buttonHeight);
+
                 if (GUI.Button(buttonRect, name))
                 {
                     InvokeMethod(editorFoldout, name);
@@ -38,7 +45,7 @@ public class MethodButtonAttributeDrawer : PropertyDrawer
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return EditorGUI.GetPropertyHeight(property, label, true) + buttonHeight * i + 2;
+        return EditorGUI.GetPropertyHeight(property, label, true) + buttonHeight * buttonCount + 2;
     }
 
     private void InvokeMethod(SerializedProperty property, string name)
@@ -52,10 +59,10 @@ public class MethodButtonAttributeDrawer : PropertyDrawer
         Debug.LogError("<color=red><b>Possible improper usage of method button attribute!</b></color>");
 #if NET_4_6
         Debug.LogError($"Got field name: <b>{editorFoldout.name}</b>, Expected: <b>editorFoldout</b>");
-        Debug.LogError($"Please see <b>{"Usage"}</b> at <b><i><color=blue>{"https://github/address"}</color></i></b>");
+        Debug.LogError($"Please see <b>{"Usage"}</b> at <b><i><color=blue>{"https://github.com/GlassToeStudio/UnityMethodButtonAttribute/blob/master/README.md"}</color></i></b>");
 #else
         Debug.LogError(string.Format("Got field name: <b>{0}</b>, Expected: <b>editorFoldout</b>", editorFoldout.name));
-        Debug.LogError("Please see <b>\"Usage\"</b> at <b><i><color=blue>\"https://github/address\"</color></i></b>");
+        Debug.LogError("Please see <b>\"Usage\"</b> at <b><i><color=blue>\"https://github.com/GlassToeStudio/UnityMethodButtonAttribute/blob/master/README.md \"</color></i></b>");
 #endif
     }
 }

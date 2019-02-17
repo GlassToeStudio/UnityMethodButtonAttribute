@@ -13,8 +13,11 @@ public class MethodButtonAttribute : PropertyAttribute
     /// Array of different method names for which a button will be displayed.
     /// <para>"MethodOne", MethodTwo" ... "MethodN"</para>
     /// </summary>
-    public string[] MethodNames { get; set; }
+    public string[] MethodNames { get; private set; }
 
+    /// <summary>
+    /// Default constructor.
+    /// </summary>
     public MethodButtonAttribute(params string[] args)
     {
         MethodNames = args;
