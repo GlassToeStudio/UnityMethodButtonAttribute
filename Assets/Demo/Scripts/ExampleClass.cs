@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class MethodButtonTest : MonoBehaviour
+public class ExampleClass : MonoBehaviour
 {
-    public int SomeInt;
-    public bool SomeBool;
+    public int ExampleInt;
+    public bool ExampleBool;
 
     public void DoAThing()
     {
