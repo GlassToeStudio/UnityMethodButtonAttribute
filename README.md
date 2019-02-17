@@ -4,7 +4,7 @@ Add this attribute to your class to create buttons in the inspector for selected
 
 <p align="center">
   <br>
-  <img src="https://github.com/GlassToeStudio/MethodButtonAttribute/blob/master/Images/MethodButtonAttribute.GIF">
+  <img src="https://github.com/GlassToeStudio/UnityMethodButtonAttribute/blob/master/Images/MethodButtonAttribute.gif">
 </p>
 
 # Usage:
