@@ -3,7 +3,7 @@
 /// <summary>
 /// Usage:
 /// <para>   #if UNITY_EDITOR</para>
-/// <para>   [MethodButton("MethodName1", "MethodName2", "MethodNameN")]  // Must match a public method name!</para>
+/// <para>   [MethodButton("MethodName1", "MethodName2", "MethodNameN")]  // Must match a the method name!</para>
 /// <para>   [SerializeField] private bool showButtons; // this bool is mandatory!</para>
 /// <para>   #endif</para>
 /// </summary>
