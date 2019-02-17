@@ -2,6 +2,11 @@
 
 Add this attribute to your class to create buttons in the inspector for selected methods. No need for a custom editor.
 
+<p align="center">
+  <br>
+  <img src="https://github.com/GlassToeStudio/MethodButtonAttribute/blob/master/Images/MethodButtonAttribute.GIF">
+</p>
+
 # Usage:
 ```cs
 using UnityEngine;
