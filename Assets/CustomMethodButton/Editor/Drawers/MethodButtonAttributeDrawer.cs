@@ -6,7 +6,7 @@ using System.Reflection;
 public class MethodButtonAttributeDrawer : PropertyDrawer
 {
     private int buttonCount;
-    private float buttonHeight = EditorGUIUtility.singleLineHeight;
+    private readonly float buttonHeight = EditorGUIUtility.singleLineHeight * 2;
     private MethodButtonAttribute attr;
     
     public override void OnGUI(Rect position, SerializedProperty editorFoldout, GUIContent label)
@@ -19,7 +19,7 @@ public class MethodButtonAttributeDrawer : PropertyDrawer
 
         buttonCount = 0;
 
-        Rect foldoutRect = new Rect(position.x, position.y, position.width, buttonHeight);
+        Rect foldoutRect = new Rect(position.x, position.y, position.width, 5 + buttonHeight);
 
         editorFoldout.boolValue = EditorGUI.Foldout(foldoutRect, editorFoldout.boolValue, "Buttons", true);
 
@@ -33,8 +33,7 @@ public class MethodButtonAttributeDrawer : PropertyDrawer
             {
                 buttonCount++;
 
-                Rect buttonRect = new Rect(position.x, position.y + (buttonHeight * buttonCount), position.width, buttonHeight);
-
+                Rect buttonRect = new Rect(position.x, position.y + ((1 + buttonHeight) * (buttonCount - 1)), position.width, buttonHeight - 1);
                 if (GUI.Button(buttonRect, name))
                 {
                     InvokeMethod(editorFoldout, name);
@@ -45,7 +44,7 @@ public class MethodButtonAttributeDrawer : PropertyDrawer
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return EditorGUI.GetPropertyHeight(property, label, true) + buttonHeight * buttonCount + 2;
+        return EditorGUI.GetPropertyHeight(property, label, true) + (buttonHeight) * (buttonCount);
     }
 
     private void InvokeMethod(SerializedProperty property, string name)
