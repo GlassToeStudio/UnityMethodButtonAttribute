@@ -12,6 +12,7 @@
     "com.unity.modules.unitywebrequest": "1.0.0",
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+        "com.glasstoestudio.methodbuttonattribute": "ssh://git@github.com/GlassToeStudio/UnityMethodButtonAttribute.git#v1.2"
   }
 }

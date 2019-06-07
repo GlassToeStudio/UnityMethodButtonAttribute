@@ -1,0 +1,15 @@
+{
+  "name": "com.glasstoestudio.methodbuttonattribute",
+  "version": "1.1.0",
+  "displayName": "Method Button Attribute",
+  "description": "Add this attribute to your class to create buttons in the inspector for selected methods. No need for a custom editor.",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/GlassToeStudio/UnityMethodButtonAttribute.git#v1.2"
+},
+  "author": {
+    "name": "Glass Toe Studio",
+    "email": "GlassToeStudio@gmail.com",
+    "url": "https://github.com/GlassToeStudio"
+  } 
+}
